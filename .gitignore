@@ -1,0 +1,35 @@
+# Flutter build and dependency folders (ignore for all sub-projects)
+**/build/
+**/.dart_tool/
+**/.packages
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.idea/
+**/.vscode/
+**/pubspec.lock
+
+# Android-specific
+**/android/.gradle/
+**/android/captures/
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+
+# iOS-specific
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Runner.xcworkspace/
+**/ios/DerivedData/
+**/ios/.dart_tool/
+
+# macOS/Linux/Windows/Web
+**/macos/Flutter/ephemeral/
+**/linux/flutter/ephemeral/
+**/windows/flutter/ephemeral/
+**/web/.dart_tool/
+
+# IDE/editor files
+**/.vscode/
+**/.idea/
