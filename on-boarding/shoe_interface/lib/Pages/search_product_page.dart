@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shoe_interface/Components/product_card.dart';
+import 'package:shoe_interface/Pages/home_page.dart';
 
 class SearchProductPage extends StatefulWidget {
   const SearchProductPage({super.key});
@@ -14,6 +14,23 @@ class _SearchProductPageState extends State<SearchProductPage> {
   final TextEditingController searchController = TextEditingController();
   final TextEditingController categoryController = TextEditingController();
   double priceRange = 60.0;
+
+  final List<Product> products = [
+    Product(
+      title: "Derby Leather Shoes",
+      description: "A classic and versatile footwear option.",
+      category: "Men's shoe",
+      price: 120.0,
+      image: "assets/images/shoe.jpg",
+    ),
+    Product(
+      title: "Casual Sneakers",
+      description: "Comfortable sneakers for everyday wear.",
+      category: "Men's shoe",
+      price: 80.0,
+      image: "assets/images/shoe.jpg",
+    ),
+  ];
 
   @override
   void initState() {
@@ -37,7 +54,13 @@ class _SearchProductPageState extends State<SearchProductPage> {
         elevation: 0,
         leading: IconButton(
           padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+              context,
+              '/home',
+              
+            );
+          },
           icon: Icon(Icons.arrow_back_ios, color: Color(0xFF3F51F3), size: 20),
         ),
         title: Text(
@@ -107,11 +130,22 @@ class _SearchProductPageState extends State<SearchProductPage> {
               padding: EdgeInsets.all(20),
               child: Column(
                 children: [
-                  // Product Card 1
-                  ProductCard(),
-                  SizedBox(height: 10),
-                  // Product Card 2
-                  ProductCard(),
+                  // Product Cards
+                  ...products.map(
+                    (product) => Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            context,
+                            '/details',
+                            arguments: product,
+                          );
+                        },
+                        child: ProductCard(product: product),
+                      ),
+                    ),
+                  ),
                   SizedBox(height: 10),
                   // Filter Section
                   Container(
@@ -161,8 +195,8 @@ class _SearchProductPageState extends State<SearchProductPage> {
                         ),
                         SizedBox(height: 5),
                         Container(
-                          width: double.infinity,  
-                          padding: EdgeInsets.zero,  
+                          width: double.infinity,
+                          padding: EdgeInsets.zero,
                           child: SliderTheme(
                             data: SliderTheme.of(context).copyWith(
                               activeTrackColor: Color(0xFF3F51F3),
@@ -192,7 +226,6 @@ class _SearchProductPageState extends State<SearchProductPage> {
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              // Handle apply filters
                               print("Apply Filters");
                             },
                             style: ElevatedButton.styleFrom(

@@ -2,16 +2,42 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shoe_interface/Components/product_card.dart';
 
+class Product {
+  final String title;
+  final String description;
+  final String category;
+  final double price;
+  final String image;
+
+  Product({
+    required this.title,
+    required this.description,
+    required this.category,
+    required this.price,
+    required this.image,
+  });
+}
+
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
+
+  final List<Product> products = [
+    Product(title: "Derby Leather Shoes", description: "A classic and versatile footwear option", category: "Men's shoe", price: 120.0, image: "assets/images/shoe.jpg"),
+    Product(title: "Casual Sneakers", description: "Comfortable sneakers for everyday wear", category: "Men's Shoe", price: 80.0, image: "assets/images/shoe.jpg"),
+    Product(title: "Formal Oxfords", description: "Elegant leather shoes for formal occasions", category: "Men's shoe", price: 150.0, image: "assets/images/shoe.jpg")
+  ];
 
   @override
   Widget build(BuildContext context) {
+    final newProduct = ModalRoute.of(context)?.settings.arguments;
+    if (newProduct is Product){
+       
+    }
     return Scaffold(
       backgroundColor: Colors.grey[50],
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          print("Floating Action Button tapped!");
+          Navigator.pushNamed(context, '/add_product');
         },
         backgroundColor: Color(0xFF3F51F3),
         foregroundColor: Colors.white,
@@ -128,25 +154,30 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFFD9D9D9)),
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
-                          blurRadius: 10,
-                          offset: const Offset(0, 2),
-                        ),
-                      ],
-                    ),
-                    child: const Icon(
-                      Icons.search,
-                      color: Color(0xFFD9D9D9),
-                      size: 24,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '/search');
+                    },
+                    child: Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xFFD9D9D9)),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.05),
+                            blurRadius: 10,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.search,
+                        color: Color(0xFFD9D9D9),
+                        size: 24,
+                      ),
                     ),
                   ),
                 ],
@@ -157,11 +188,16 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                itemCount: 3,
+                itemCount: products.length,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
-                    child: ProductCard(),
+                    child: GestureDetector(
+                      onTap: (){
+                        Navigator.pushNamed(context, '/details',arguments: products[index]);
+                      },
+                      child: ProductCard(product: products[index]),
+                    ),
                   );
                 },
               ),

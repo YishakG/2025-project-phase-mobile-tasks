@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shoe_interface/Pages/home_page.dart';
 
 class AddProductPage extends StatefulWidget {
-  const AddProductPage({super.key});
+  final Product? product;
+  const AddProductPage({super.key, this.product});
 
   @override
   State<AddProductPage> createState() => _AddProductPageState();
@@ -24,6 +26,17 @@ class _AddProductPageState extends State<AddProductPage> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    if (widget.product != null) {
+      nameController.text = widget.product!.title;
+      categoryController.text = widget.product!.category;
+      priceController.text = widget.product!.price.toString();
+      descriptionController.text = widget.product!.description;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
@@ -32,11 +45,19 @@ class _AddProductPageState extends State<AddProductPage> {
         elevation: 0,
         leading: IconButton(
           padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
-          onPressed: () => Navigator.pop(context),
-          icon: Icon(Icons.arrow_back_ios, color: Color(0xFF3F51F3), size: 20,),
+          onPressed: () {
+            Navigator.pushReplacementNamed(
+              context,
+              '/home',
+              arguments: RouteSettings(
+                // arguments: TransitionInfo(type: TransitionType.slideLeft),
+              ),
+            );
+          },
+          icon: Icon(Icons.arrow_back_ios, color: Color(0xFF3F51F3), size: 20),
         ),
         title: Text(
-          "Add Product",
+          widget.product != null ? "Edit Product" : "Add Product",
           style: GoogleFonts.poppins(
             fontSize: 16,
             fontWeight: FontWeight.w500,
@@ -47,7 +68,7 @@ class _AddProductPageState extends State<AddProductPage> {
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        child: Column(          
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Handle image upload
@@ -166,7 +187,10 @@ class _AddProductPageState extends State<AddProductPage> {
                 ),
                 suffixIcon: Padding(
                   padding: EdgeInsets.only(right: 16),
-                  child: Icon(Icons.attach_money_outlined, color: Color(0xFF3E3E3E)),
+                  child: Icon(
+                    Icons.attach_money_outlined,
+                    color: Color(0xFF3E3E3E),
+                  ),
                 ),
                 suffixIconConstraints: BoxConstraints(
                   minWidth: 0,
@@ -210,7 +234,15 @@ class _AddProductPageState extends State<AddProductPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      print("Add Product");
+                      final product = Product(
+                        title: nameController.text,
+                        description: descriptionController.text,
+                        category: categoryController.text,
+                        price: double.tryParse(priceController.text) ?? 0.0,
+                        image: widget.product?.image ?? "assets/images/shoe.jpg",
+                      );
+                      Navigator.pushReplacementNamed(context, '/home',
+                      arguments: product);
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Color(0xFF3F51F3),
@@ -220,7 +252,7 @@ class _AddProductPageState extends State<AddProductPage> {
                       ),
                     ),
                     child: Text(
-                      "ADD",
+                      widget.product != null ? "UPDATE" : "ADD",
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
