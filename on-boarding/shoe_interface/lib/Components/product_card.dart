@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shoe_interface/Pages/home_page.dart';
+
+
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  final Product product;
+  const ProductCard({super.key,
+  required this.product});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +38,7 @@ class ProductCard extends StatelessWidget {
             ),
             child: Center(
               child: Image.asset(
-                "assets/images/shoe.jpg",
+                product.image,
                 height: double.infinity,
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -49,7 +55,7 @@ class ProductCard extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        "Derby Leather Shoes",
+                        product.title,
                         style: GoogleFonts.poppins(
                           fontSize: 20,
                           fontWeight: FontWeight.w500,
@@ -58,7 +64,7 @@ class ProductCard extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "\$120",
+                      "\$${product.price}",
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
@@ -71,7 +77,7 @@ class ProductCard extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "Men's shoe",
+                      product.category,
                       style: GoogleFonts.poppins(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
