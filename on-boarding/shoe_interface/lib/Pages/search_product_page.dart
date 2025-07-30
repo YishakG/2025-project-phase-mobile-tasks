@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoe_interface/Components/product_card.dart';
-import 'package:shoe_interface/Pages/home_page.dart';
+import '../Components/product_card.dart';
+import '../Pages/home_page.dart';
 
 class SearchProductPage extends StatefulWidget {
   const SearchProductPage({super.key});
@@ -17,25 +17,25 @@ class _SearchProductPageState extends State<SearchProductPage> {
 
   final List<Product> products = [
     Product(
-      title: "Derby Leather Shoes",
-      description: "A classic and versatile footwear option.",
-      category: "Men's shoe",
+      title: 'Derby Leather Shoes',
+      description: 'A classic and versatile footwear option.',
+      category: 'Men\'s shoe',
       price: 120.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
     Product(
-      title: "Casual Sneakers",
-      description: "Comfortable sneakers for everyday wear.",
-      category: "Men's shoe",
+      title: 'Casual Sneakers',
+      description: 'Comfortable sneakers for everyday wear.',
+      category: 'Men\'s shoe',
       price: 80.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
   ];
 
   @override
   void initState() {
     super.initState();
-    searchController.text = "Leather";
+    searchController.text = 'Leather';
   }
 
   @override
@@ -48,12 +48,12 @@ class _SearchProductPageState extends State<SearchProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFFFFFFF),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         elevation: 0,
         leading: IconButton(
-          padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+          padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           onPressed: () {
             Navigator.pushReplacementNamed(
               context,
@@ -61,14 +61,14 @@ class _SearchProductPageState extends State<SearchProductPage> {
               
             );
           },
-          icon: Icon(Icons.arrow_back_ios, color: Color(0xFF3F51F3), size: 20),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF3F51F3), size: 20),
         ),
         title: Text(
-          "Search Product",
+          'Search Product',
           style: GoogleFonts.poppins(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Color(0xFF3E3E3E),
+            color: const Color(0xFF3E3E3E),
           ),
         ),
         centerTitle: true,
@@ -78,7 +78,7 @@ class _SearchProductPageState extends State<SearchProductPage> {
           // Search Bar Section
           Container(
             color: Colors.white,
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Row(
               children: [
                 Expanded(
@@ -87,38 +87,38 @@ class _SearchProductPageState extends State<SearchProductPage> {
                     style: GoogleFonts.poppins(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFF666666),
+                      color: const Color(0xFF666666),
                     ),
                     decoration: InputDecoration(
                       filled: true,
-                      fillColor: Color(0xFFFFFFFF),
+                      fillColor: const Color(0xFFFFFFFF),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: BorderSide(color: Color(0xFFD9D9D9)),
+                        borderSide: const BorderSide(color: Color(0xFFD9D9D9)),
                       ),
-                      contentPadding: EdgeInsets.symmetric(
+                      contentPadding: const EdgeInsets.symmetric(
                         horizontal: 9,
                         vertical: 9,
                       ),
-                      suffixIcon: Icon(
+                      suffixIcon: const Icon(
                         Icons.arrow_forward,
                         color: Color(0xFF3F51F3),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 // Filter Icon
                 Container(
                   width: 48,
                   height: 48,
                   decoration: BoxDecoration(
-                    color: Color(0xFF4F46E5),
+                    color: const Color(0xFF4F46E5),
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.filter_list, color: Colors.white),
+                    icon: const Icon(Icons.filter_list, color: Colors.white),
                   ),
                 ),
               ],
@@ -127,7 +127,7 @@ class _SearchProductPageState extends State<SearchProductPage> {
           // Product Results
           Expanded(
             child: SingleChildScrollView(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
                   // Product Cards
@@ -146,11 +146,11 @@ class _SearchProductPageState extends State<SearchProductPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   // Filter Section
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
@@ -160,50 +160,50 @@ class _SearchProductPageState extends State<SearchProductPage> {
                       children: [
                         // Category Filter
                         Text(
-                          "Category",
+                          'Category',
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
-                            color: Color(0xFF000000),
+                            color:  const Color(0xFF000000),
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         TextField(
                           controller: categoryController,
                           decoration: InputDecoration(
                             filled: true,
-                            fillColor: Color(0xFFF8F8F8),
+                            fillColor: const Color(0xFFF8F8F8),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(12),
-                              borderSide: BorderSide(color: Color(0xFFD9D9D9)),
+                              borderSide: const BorderSide(color: Color(0xFFD9D9D9)),
                             ),
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                               horizontal: 12,
                               vertical: 12,
                             ),
                           ),
                         ),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                         // Price Filter
                         Text(
-                          "Price",
+                          'Price',
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w400,
                             fontSize: 15,
-                            color: Color(0xFF000000),
+                            color: const Color(0xFF000000),
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Container(
                           width: double.infinity,
                           padding: EdgeInsets.zero,
                           child: SliderTheme(
                             data: SliderTheme.of(context).copyWith(
-                              activeTrackColor: Color(0xFF3F51F3),
-                              inactiveTrackColor: Color(0xFFD9D9D9),
-                              thumbColor: Color(0xFF3F51F3),
-                              overlayColor: Color(0xFF3F51F3).withOpacity(0.2),
-                              thumbShape: RoundSliderThumbShape(
+                              activeTrackColor: const Color(0xFF3F51F3),
+                              inactiveTrackColor: const Color(0xFFD9D9D9),
+                              thumbColor: const Color(0xFF3F51F3),
+                              overlayColor: const Color(0xFF3F51F3).withValues(alpha: .2),
+                              thumbShape: const RoundSliderThumbShape(
                                 enabledThumbRadius: 12,
                               ),
                               trackHeight: 5,
@@ -220,27 +220,27 @@ class _SearchProductPageState extends State<SearchProductPage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 15),
+                        const SizedBox(height: 15),
                         // Apply Button
-                        Container(
+                        SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
                             onPressed: () {
-                              print("Apply Filters");
+                              
                             },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0xFF3F51F3),
-                              padding: EdgeInsets.symmetric(vertical: 16),
+                              backgroundColor: const Color(0xFF3F51F3),
+                              padding: const EdgeInsets.symmetric(vertical: 16),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8),
                               ),
                             ),
                             child: Text(
-                              "APPLY",
+                              'APPLY',
                               style: GoogleFonts.poppins(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 16,
-                                color: Color(0xFFFFFFFF),
+                                color: const Color(0xFFFFFFFF),
                               ),
                             ),
                           ),

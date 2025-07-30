@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoe_interface/Components/product_card.dart';
+import '../Components/product_card.dart';
 
 class Product {
   final String title;
@@ -22,9 +22,9 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   final List<Product> products = [
-    Product(title: "Derby Leather Shoes", description: "A classic and versatile footwear option", category: "Men's shoe", price: 120.0, image: "assets/images/shoe.jpg"),
-    Product(title: "Casual Sneakers", description: "Comfortable sneakers for everyday wear", category: "Men's Shoe", price: 80.0, image: "assets/images/shoe.jpg"),
-    Product(title: "Formal Oxfords", description: "Elegant leather shoes for formal occasions", category: "Men's shoe", price: 150.0, image: "assets/images/shoe.jpg")
+    Product(title: 'Derby Leather Shoes', description: 'A classic and versatile footwear option', category: 'Men\'s shoe', price: 120.0, image: 'assets/images/shoe.jpg'),
+    Product(title: 'Casual Sneakers', description: 'Comfortable sneakers for everyday wear', category: 'Men\'s Shoe', price: 80.0, image: 'assets/images/shoe.jpg'),
+    Product(title: 'Formal Oxfords', description: 'Elegant leather shoes for formal occasions', category: 'Men\'s shoe', price: 150.0, image: 'assets/images/shoe.jpg')
   ];
 
   @override
@@ -39,11 +39,11 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, '/add_product');
         },
-        backgroundColor: Color(0xFF3F51F3),
+        backgroundColor: const Color(0xFF3F51F3),
         foregroundColor: Colors.white,
 
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-        child: Icon(Icons.add, size: 35),
+        child: const Icon(Icons.add, size: 35),
       ),
 
       body: SafeArea(
@@ -51,14 +51,14 @@ class HomePage extends StatelessWidget {
           children: [
             // Header Section
             Padding(
-              padding: EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: Row(
                 children: [
                   Container(
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
-                      color: Color(0xFFCCCCCC),
+                      color: const Color(0xFFCCCCCC),
                       borderRadius: BorderRadius.circular(11),
                     ),
                   ),
@@ -69,11 +69,11 @@ class HomePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "July 14,2023",
+                          'July 14,2023',
                           style: GoogleFonts.syne(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,
-                            color: Color(0xFFAAAAAA),
+                            color: const Color(0xFFAAAAAA),
                           ),
                         ),
                         const SizedBox(height: 2),
@@ -84,13 +84,13 @@ class HomePage extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                             children: [
-                              TextSpan(text: "Hello, "),
+                              const TextSpan(text: 'Hello, '),
                               TextSpan(
-                                text: "Yohannes",
+                                text: 'Yohannes',
                                 style: GoogleFonts.sora(
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15,
-                                  color: Color(0xFF000000),
+                                  color: const Color(0xFF000000),
                                 ),
                               ),
                             ],
@@ -104,12 +104,12 @@ class HomePage extends StatelessWidget {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFFDDDDDD), width: 1),
+                      border: Border.all(color: const Color(0xFFDDDDDD), width: 1),
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(9),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.05),
+                          color: Colors.black.withValues(alpha: 0.05),
                           blurRadius: 10,
                           offset: const Offset(0, 2),
                         ),
@@ -118,7 +118,7 @@ class HomePage extends StatelessWidget {
                     child: Stack(
                       alignment: Alignment.center,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.notifications_outlined,
                           size: 25,
                           color: Color(0xFF666666),
@@ -129,7 +129,7 @@ class HomePage extends StatelessWidget {
                           child: Container(
                             width: 8,
                             height: 8,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFF3F51F3),
                               shape: BoxShape.circle,
                             ),
@@ -147,7 +147,7 @@ class HomePage extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    "Available Products",
+                    'Available Products',
                     style: GoogleFonts.poppins(
                       fontSize: 24,
                       fontWeight: FontWeight.w600,
@@ -162,12 +162,12 @@ class HomePage extends StatelessWidget {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xFFD9D9D9)),
+                        border: Border.all(color: const Color(0xFFD9D9D9)),
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.black.withOpacity(0.05),
+                            color: Colors.black..withValues(alpha: 0.05),
                             blurRadius: 10,
                             offset: const Offset(0, 2),
                           ),
