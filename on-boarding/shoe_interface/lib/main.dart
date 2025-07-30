@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shoe_interface/Pages/add_product_page.dart';
-import 'package:shoe_interface/Pages/details_page.dart';
-import 'package:shoe_interface/Pages/home_page.dart';
-import 'package:shoe_interface/Pages/search_product_page.dart';
+import '../Pages/add_product_page.dart';
+import '../Pages/details_page.dart';
+import '../Pages/home_page.dart';
+import '../Pages/search_product_page.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shoe_interface/Pages/home_page.dart';
+import '../Pages/home_page.dart';
 
 class AddProductPage extends StatefulWidget {
   final Product? product;
@@ -39,195 +39,195 @@ class _AddProductPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFFFFFFF),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFFFFFF),
+        backgroundColor: const Color(0xFFFFFFFF),
         elevation: 0,
         leading: IconButton(
-          padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
+          padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
           onPressed: () {
             Navigator.pushReplacementNamed(
               context,
               '/home',
-              arguments: RouteSettings(
+              arguments: const RouteSettings(
                 // arguments: TransitionInfo(type: TransitionType.slideLeft),
               ),
             );
           },
-          icon: Icon(Icons.arrow_back_ios, color: Color(0xFF3F51F3), size: 20),
+          icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF3F51F3), size: 20),
         ),
         title: Text(
-          widget.product != null ? "Edit Product" : "Add Product",
+          widget.product != null ? 'Edit Product' : 'Add Product',
           style: GoogleFonts.poppins(
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            color: Color(0xFF3E3E3E),
+            color: const Color(0xFF3E3E3E),
           ),
         ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Handle image upload
             GestureDetector(
               onTap: () {
-                print("Upload image upload");
+                
               },
               child: Container(
                 width: double.infinity,
                 height: 160,
                 decoration: BoxDecoration(
-                  color: Color(0xFFF3F3F3),
+                  color: const Color(0xFFF3F3F3),
                   borderRadius: BorderRadius.circular(16),
                   border: Border.all(
-                    color: Color(0xFFF3F3F3),
+                    color: const Color(0xFFF3F3F3),
                     style: BorderStyle.solid,
                   ),
-                ),
+                ), 
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.image_outlined,
                       size: 48,
                       color: Color(0xFF3E3E3E),
                     ),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Text(
-                      "upload image",
+                      'upload image',
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
-                        color: Color(0xFF3E3E3E),
+                        color: const Color(0xFF3E3E3E),
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Name Field
             Text(
-              "name",
+              'name',
               style: GoogleFonts.poppins(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: Color(0xFF3E3E3E),
+                color: const Color(0xFF3E3E3E),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             TextField(
               controller: nameController,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xFFF3F3F3),
+                fillColor: const Color(0xFFF3F3F3),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
                   borderSide: BorderSide.none,
                 ),
-                contentPadding: EdgeInsets.symmetric(
+                contentPadding: const EdgeInsets.symmetric(
                   horizontal: 14,
                   vertical: 14,
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Category Field
             Text(
-              "category",
+              'category',
               style: GoogleFonts.poppins(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: Color(0xFF3E3E3E),
+                color: const Color(0xFF3E3E3E),
               ),
-            ),
-            SizedBox(height: 5),
+            ), 
+            const SizedBox(height: 5),
             TextField(
               controller: categoryController,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xFFF3F3F3),
+                fillColor: const Color(0xFFF3F3F3),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
-                  borderSide: BorderSide.none,
+                  borderSide:  BorderSide.none,
                 ),
-                contentPadding: EdgeInsets.symmetric(
+                contentPadding: const EdgeInsets.symmetric(
                   horizontal: 14,
                   vertical: 14,
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Price Field
             Text(
-              "price",
+              'price',
               style: GoogleFonts.poppins(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: Color(0xFF3E3E3E),
+                color: const Color(0xFF3E3E3E),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             TextField(
               controller: priceController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xFFF3F3F3),
+                fillColor: const Color(0xFFF3F3F3),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
                   borderSide: BorderSide.none,
                 ),
-                contentPadding: EdgeInsets.symmetric(
+                contentPadding: const EdgeInsets.symmetric(
                   horizontal: 14,
                   vertical: 14,
                 ),
-                suffixIcon: Padding(
+                suffixIcon: const Padding(
                   padding: EdgeInsets.only(right: 16),
                   child: Icon(
                     Icons.attach_money_outlined,
                     color: Color(0xFF3E3E3E),
                   ),
                 ),
-                suffixIconConstraints: BoxConstraints(
+                suffixIconConstraints: const BoxConstraints(
                   minWidth: 0,
                   minHeight: 0,
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Descript Field
             Text(
-              "description",
+              'description',
               style: GoogleFonts.poppins(
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
-                color: Color(0xFF3E3E3E),
+                color: const Color(0xFF3E3E3E),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             TextField(
               controller: descriptionController,
               maxLines: 6,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xFFF3F3F3),
+                fillColor: const Color(0xFFF3F3F3),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(6),
                   borderSide: BorderSide.none,
                 ),
-                contentPadding: EdgeInsets.symmetric(
+                contentPadding: const EdgeInsets.symmetric(
                   horizontal: 14,
                   vertical: 14,
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             // Action Buttons
-            Column(
+             Column(
               children: [
                 // Add Button
                 SizedBox(
@@ -239,58 +239,58 @@ class _AddProductPageState extends State<AddProductPage> {
                         description: descriptionController.text,
                         category: categoryController.text,
                         price: double.tryParse(priceController.text) ?? 0.0,
-                        image: widget.product?.image ?? "assets/images/shoe.jpg",
+                        image: widget.product?.image ?? 'assets/images/shoe.jpg',
                       );
                       Navigator.pushReplacementNamed(context, '/home',
                       arguments: product);
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF3F51F3),
-                      padding: EdgeInsets.symmetric(vertical: 16),
+                      backgroundColor: const Color(0xFF3F51F3),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                     child: Text(
-                      widget.product != null ? "UPDATE" : "ADD",
+                      widget.product != null ? 'UPDATE' : 'ADD',
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xFFFFFFFF),
+                        color: const Color(0xFFFFFFFF),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                 const SizedBox(height: 10),
 
                 // Delete Button
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
-                      side: BorderSide(color: Color(0xFFFF1313)),
-                      padding: EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(
+                      side: const BorderSide(color: Color(0xFFFF1313)),
+                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      shape:  RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
                     onPressed: () {
                       // Handle Delete
-                      print("Delete Product");
+                      
                     },
                     child: Text(
-                      "DELETE",
+                      'DELETE',
                       style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
-                        color: Color(0xFFFF1313),
+                        color: const Color(0xFFFF1313),
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
           ],
         ),
       ),
