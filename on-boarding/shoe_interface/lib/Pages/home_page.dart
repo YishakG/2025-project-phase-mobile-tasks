@@ -22,17 +22,31 @@ class HomePage extends StatelessWidget {
   HomePage({super.key});
 
   final List<Product> products = [
-    Product(title: "Derby Leather Shoes", description: "A classic and versatile footwear option", category: "Men's shoe", price: 120.0, image: "assets/images/shoe.jpg"),
-    Product(title: "Casual Sneakers", description: "Comfortable sneakers for everyday wear", category: "Men's Shoe", price: 80.0, image: "assets/images/shoe.jpg"),
-    Product(title: "Formal Oxfords", description: "Elegant leather shoes for formal occasions", category: "Men's shoe", price: 150.0, image: "assets/images/shoe.jpg")
+    Product(
+      title: "Derby Leather Shoes",
+      description: "A classic and versatile footwear option",
+      category: "Men's shoe",
+      price: 120.0,
+      image: "assets/images/shoe.jpg",
+    ),
+    Product(
+      title: "Casual Sneakers",
+      description: "Comfortable sneakers for everyday wear",
+      category: "Men's Shoe",
+      price: 80.0,
+      image: "assets/images/shoe.jpg",
+    ),
+    Product(
+      title: "Formal Oxfords",
+      description: "Elegant leather shoes for formal occasions",
+      category: "Men's shoe",
+      price: 150.0,
+      image: "assets/images/shoe.jpg",
+    ),
   ];
 
   @override
   Widget build(BuildContext context) {
-    final newProduct = ModalRoute.of(context)?.settings.arguments;
-    if (newProduct is Product){
-       
-    }
     return Scaffold(
       backgroundColor: Colors.grey[50],
       floatingActionButton: FloatingActionButton(
@@ -155,7 +169,7 @@ class HomePage extends StatelessWidget {
                   ),
                   const Spacer(),
                   GestureDetector(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pushNamed(context, '/search');
                     },
                     child: Container(
@@ -193,8 +207,12 @@ class HomePage extends StatelessWidget {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 16.0),
                     child: GestureDetector(
-                      onTap: (){
-                        Navigator.pushNamed(context, '/details',arguments: products[index]);
+                      onTap: () {
+                        Navigator.pushNamed(
+                          context,
+                          '/details',
+                          arguments: products[index],
+                        );
                       },
                       child: ProductCard(product: products[index]),
                     ),
