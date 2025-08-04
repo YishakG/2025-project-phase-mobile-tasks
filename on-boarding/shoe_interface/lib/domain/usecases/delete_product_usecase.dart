@@ -1,15 +1,13 @@
 import 'package:dartz/dartz.dart';
+
 import '../../core/error/failures.dart';
-import '../../core/usecases/usecase.dart';
 import '../repositories/product_repository.dart';
 
-class DeleteProductUsecase implements UseCase<void, String> {
-  final ProductRepository repository;
+class DeleteProductUsecase {
+  ProductRepository productRepository;
+  DeleteProductUsecase(this.productRepository);
 
-  DeleteProductUsecase(this.repository);
-
-  @override
-  Future<Either<Failure, void>> call(String id) async {
-    return await repository.deleteProduct(id);
+  Future<Either<Failure, void>> execute(String id) {
+    return productRepository.deleteProduct(id);
   }
 }
