@@ -1,16 +1,14 @@
 import 'package:dartz/dartz.dart';
+
 import '../../core/error/failures.dart';
-import '../../core/usecases/usecase.dart';
-import '../entities/product.dart';
+import '../entities/product_entitiy.dart';
 import '../repositories/product_repository.dart';
 
-class UpdateProductUsecase implements UseCase<Product, Product> {
-  final ProductRepository repository;
+class UpdateProductUsecase {
+  ProductRepository productRepository;
+  UpdateProductUsecase(this.productRepository);
 
-  UpdateProductUsecase(this.repository);
-
-  @override
-  Future<Either<Failure, Product>> call(Product product) async {
-    return await repository.updateProduct(product);
+  Future<Either<Failure,ProductEntitiy>> execute(ProductEntitiy product){
+    return productRepository.updateProduct(product);
   }
 }
