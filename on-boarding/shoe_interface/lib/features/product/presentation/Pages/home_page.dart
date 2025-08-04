@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Components/product_card.dart';
+
+import '../../../../core/Components/product_card.dart';
+
 
 class Product {
   final String title;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Pages/home_page.dart';
+import 'home_page.dart';
 
 class AddProductPage extends StatefulWidget {
   final Product? product;
