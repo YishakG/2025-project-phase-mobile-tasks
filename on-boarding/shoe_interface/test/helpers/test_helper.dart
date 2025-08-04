@@ -1,5 +1,5 @@
 import 'package:mockito/annotations.dart';
-import 'package:shoe_interface/domain/repositories/product_repository.dart';
+import 'package:shoe_interface/features/product/domain/repositories/product_repository.dart';
 
 // import 'package:http/http.dart' as http;
 @GenerateMocks(

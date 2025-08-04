@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../Pages/add_product_page.dart';
-import '../Pages/details_page.dart';
-import '../Pages/home_page.dart';
-import '../Pages/search_product_page.dart';
+import 'features/product/presentation/Pages/add_product_page.dart';
+import 'features/product/presentation/Pages/details_page.dart';
+import 'features/product/presentation/Pages/home_page.dart';
+import 'features/product/presentation/Pages/search_product_page.dart';
 
 void main() {
   runApp(const MyApp());

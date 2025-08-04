@@ -8,8 +8,8 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:shoe_interface/core/error/failures.dart' as _i5;
-import 'package:shoe_interface/domain/entities/product_entitiy.dart' as _i6;
-import 'package:shoe_interface/domain/repositories/product_repository.dart'
+import 'package:shoe_interface/features/product/domain/entities/product_entitiy.dart' as _i6;
+import 'package:shoe_interface/features/product/domain/repositories/product_repository.dart'
     as _i3;
 
 // ignore_for_file: type=lint
