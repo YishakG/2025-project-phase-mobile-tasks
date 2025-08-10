@@ -4,10 +4,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:shoe_interface/features/product/data/models/product_model.dart';
 import 'package:shoe_interface/features/product/domain/entities/product_entitiy.dart';
 
-import '../../helpers/json_reader.dart';
+import '../../../../helpers/json_reader.dart';
 
 void main() {
-  final testProductModel = ProductModel(
+  final testProductModel = const ProductModel(
     id: '12345',
     name: 'Nike SB Dunk Low Panda',
     description: 'Classic Panda colorway, leather upper, waffle outsole',
@@ -34,7 +34,7 @@ void main() {
     // arrange
 
     // act
-    final result = await testProductModel.toJson();
+    final result = testProductModel.toJson();
 
     // assert
     final expectedJson = {

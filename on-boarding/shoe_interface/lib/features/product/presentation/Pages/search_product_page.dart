@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'home_page.dart';
+
 import '../../../../core/Components/product_card.dart';
+import 'product_page.dart';
 
 class SearchProductPage extends StatefulWidget {
   const SearchProductPage({super.key});

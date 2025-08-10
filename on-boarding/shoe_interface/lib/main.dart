@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'features/product/presentation/Pages/add_product_page.dart';
 import 'features/product/presentation/Pages/details_page.dart';
-import 'features/product/presentation/Pages/home_page.dart';
+import 'features/auth/presentation/pages/home_page_main.dart';
+import 'features/product/presentation/Pages/product_page.dart';
 import 'features/product/presentation/Pages/search_product_page.dart';
+import 'features/auth/presentation/pages/sign_in_page.dart';
+import 'features/auth/presentation/pages/sign_up_page.dart';
+import 'features/auth/presentation/pages/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +29,7 @@ class MyApp extends StatelessWidget {
         Widget page;
         switch (settings.name) {
           case '/home':
-            page = HomePage();
+            page = const HomePageMain();
             break;
           case '/add_product':
             page = AddProductPage(product: settings.arguments as Product?);
@@ -35,8 +40,17 @@ class MyApp extends StatelessWidget {
           case '/search':
             page = const SearchProductPage();
             break;
+          case '/signin':
+            page = const SignInPage();
+          case '/signup':
+            page = const SignUpPage();
+          case '/splash':
+            page = const SplashScreen();
+          case '/product':
+            page = ProductPage();
+
           default:
-            page = HomePage();
+            page = const SplashScreen();
         }
 
         // Use default MaterialPageRoute without custom transitions

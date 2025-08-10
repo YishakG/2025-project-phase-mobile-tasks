@@ -1,7 +1,7 @@
 import '../../domain/entities/product_entitiy.dart';
 
 class ProductModel extends ProductEntitiy {
-  ProductModel({
+  const ProductModel({
     required super.id,
     required super.name,
     required super.description,

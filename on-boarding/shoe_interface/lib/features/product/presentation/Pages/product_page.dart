@@ -20,30 +20,30 @@ class Product {
   });
 }
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
+class ProductPage extends StatelessWidget {
+  ProductPage({super.key});
 
   final List<Product> products = [
     Product(
-      title: "Derby Leather Shoes",
-      description: "A classic and versatile footwear option",
+      title: 'Derby Leather Shoes',
+      description: 'A classic and versatile footwear option',
       category: "Men's shoe",
       price: 120.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
     Product(
-      title: "Casual Sneakers",
-      description: "Comfortable sneakers for everyday wear",
+      title: 'Casual Sneakers',
+      description: 'Comfortable sneakers for everyday wear',
       category: "Men's Shoe",
       price: 80.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
     Product(
-      title: "Formal Oxfords",
-      description: "Elegant leather shoes for formal occasions",
+      title: 'Formal Oxfords',
+      description: 'Elegant leather shoes for formal occasions',
       category: "Men's shoe",
       price: 150.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
   ];
 

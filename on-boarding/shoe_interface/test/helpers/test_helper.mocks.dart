@@ -8,7 +8,12 @@ import 'dart:async' as _i4;
 import 'package:dartz/dartz.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:shoe_interface/core/error/failures.dart' as _i5;
-import 'package:shoe_interface/features/product/domain/entities/product_entitiy.dart' as _i6;
+import 'package:shoe_interface/features/auth/domain/entities/auth_entity.dart'
+    as _i8;
+import 'package:shoe_interface/features/auth/domain/repositories/auth_repository.dart'
+    as _i7;
+import 'package:shoe_interface/features/product/domain/entities/product_entitiy.dart'
+    as _i6;
 import 'package:shoe_interface/features/product/domain/repositories/product_repository.dart'
     as _i3;
 
@@ -115,4 +120,72 @@ class MockProductRepository extends _i1.Mock implements _i3.ProductRepository {
             ),
           )
           as _i4.Future<_i2.Either<_i5.Failure, void>>);
+}
+
+/// A class which mocks [AuthRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockAuthRepository extends _i1.Mock implements _i7.AuthRepository {
+  MockAuthRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i8.AuthEntity>> login({
+    required String? email,
+    required String? password,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#login, [], {#email: email, #password: password}),
+            returnValue:
+                _i4.Future<_i2.Either<_i5.Failure, _i8.AuthEntity>>.value(
+                  _FakeEither_0<_i5.Failure, _i8.AuthEntity>(
+                    this,
+                    Invocation.method(#login, [], {
+                      #email: email,
+                      #password: password,
+                    }),
+                  ),
+                ),
+          )
+          as _i4.Future<_i2.Either<_i5.Failure, _i8.AuthEntity>>);
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i8.AuthEntity>> signup({
+    required String? name,
+    required String? email,
+    required String? password,
+  }) =>
+      (super.noSuchMethod(
+            Invocation.method(#signup, [], {
+              #name: name,
+              #email: email,
+              #password: password,
+            }),
+            returnValue:
+                _i4.Future<_i2.Either<_i5.Failure, _i8.AuthEntity>>.value(
+                  _FakeEither_0<_i5.Failure, _i8.AuthEntity>(
+                    this,
+                    Invocation.method(#signup, [], {
+                      #name: name,
+                      #email: email,
+                      #password: password,
+                    }),
+                  ),
+                ),
+          )
+          as _i4.Future<_i2.Either<_i5.Failure, _i8.AuthEntity>>);
+
+  @override
+  _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>> logout() =>
+      (super.noSuchMethod(
+            Invocation.method(#logout, []),
+            returnValue: _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>.value(
+              _FakeEither_0<_i5.Failure, _i2.Unit>(
+                this,
+                Invocation.method(#logout, []),
+              ),
+            ),
+          )
+          as _i4.Future<_i2.Either<_i5.Failure, _i2.Unit>>);
 }

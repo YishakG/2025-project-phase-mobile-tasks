@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shoe_interface/features/product/domain/usecases/delete_product_usecase.dart';
 
-import '../../helpers/test_helper.mocks.dart';
+import '../../../../helpers/test_helper.mocks.dart';
 
 void main() {
   DeleteProductUsecase deleteProductUsecase;
@@ -19,7 +19,7 @@ void main() {
     // arrange
     when(
       mockProductRepository.deleteProduct(testId),
-    ).thenAnswer((_) async => Right(null));
+    ).thenAnswer((_) async => const Right(null));
 
     // act
     final result = await mockProductRepository.deleteProduct(testId);
