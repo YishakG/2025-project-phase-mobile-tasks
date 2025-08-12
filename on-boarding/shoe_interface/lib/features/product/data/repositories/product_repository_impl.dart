@@ -39,9 +39,12 @@ class ProductRepositoryImpl implements ProductRepository {
       return const Left(NetworkFailure());
     }
   }
-
+  // Functional programming equivalent of void
+  // Unit has a possible value of unit
   @override
-  Future<Either<Failure, void>> deleteProduct(String id) async{
+
+Future<Either<Failure, Unit>> deleteProduct(String id) {
+
     // TODO: implement deleteProduct
     if (await networkInfo.isConnected){
       try{

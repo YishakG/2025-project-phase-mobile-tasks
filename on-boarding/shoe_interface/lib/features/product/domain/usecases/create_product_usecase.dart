@@ -8,7 +8,9 @@ class CreateProductUsecase {
   ProductRepository productRepository;
   CreateProductUsecase(this.productRepository);
 
-  Future<Either<Failure, ProductEntitiy>> execute(ProductEntitiy product) {
-    return productRepository.createProduct(product);
+  Future<Either<Failure, ProductEntitiy>> execute(
+    ProductEntitiy product,
+  ) async {
+    return await productRepository.createProduct(product);
   }
 }
