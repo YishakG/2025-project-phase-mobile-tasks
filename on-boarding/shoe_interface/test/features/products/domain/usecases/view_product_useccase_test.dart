@@ -4,7 +4,7 @@ import 'package:mockito/mockito.dart';
 import 'package:shoe_interface/features/product/domain/entities/product_entitiy.dart';
 import 'package:shoe_interface/features/product/domain/usecases/view_product_usecase.dart';
 
-import '../../helpers/test_helper.mocks.dart';
+import '../../../../helpers/test_helper.mocks.dart';
 
 void main() {
   ViewProductUsecase viewProductUsecase;
