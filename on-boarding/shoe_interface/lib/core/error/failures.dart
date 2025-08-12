@@ -16,9 +16,11 @@ class CacheFailure extends Failure {
 }
 
 class NetworkFailure extends Failure {
-  const NetworkFailure(super.message);
+  const NetworkFailure([super.message = 'No Network Connection']);
 }
+
 
 class NetworkFailure extends Failure {
   const NetworkFailure([super.message = 'No internet connection']);
 }
+
