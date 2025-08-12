@@ -19,8 +19,8 @@ void main() {
     // arrange
     when(
       mockProductRepository.deleteProduct(testId),
-    ).thenAnswer((_) async => Right(unit));
 
+    ).thenAnswer((_) async => Right(unit));
     // act
     final result = await mockProductRepository.deleteProduct(testId);
 

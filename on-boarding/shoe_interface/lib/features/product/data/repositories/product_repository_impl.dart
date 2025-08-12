@@ -43,7 +43,9 @@ class ProductRepositoryImpl implements ProductRepository {
   // Unit has a possible value of unit
   @override
 
+
 Future<Either<Failure, Unit>> deleteProduct(String id) async{
+
 
     // TODO: implement deleteProduct
     if (await networkInfo.isConnected){

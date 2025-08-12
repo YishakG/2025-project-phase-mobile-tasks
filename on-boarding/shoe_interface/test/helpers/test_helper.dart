@@ -11,5 +11,6 @@ import 'package:shoe_interface/features/product/domain/repositories/product_repo
   ProductRemoteDataSource,
   ProductLocalDataSource,
   InternetConnectionChecker
+
 ])
 void main() {}
