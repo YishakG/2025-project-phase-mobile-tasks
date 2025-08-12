@@ -24,9 +24,10 @@ class ProductRepositoryImpl implements ProductRepository {
     // TODO: implement createProduct
     throw UnimplementedError();
   }
-
+  // Functional programming equivalent of void
+  // Unit has a possible value of unit
   @override
-  Future<Either<Failure, void>> deleteProduct(String id) {
+  Future<Either<Failure, Unit>> deleteProduct(String id) {
     // TODO: implement deleteProduct
     throw UnimplementedError();
   }
