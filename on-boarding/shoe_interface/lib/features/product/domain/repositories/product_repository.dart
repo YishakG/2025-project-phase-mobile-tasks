@@ -7,5 +7,5 @@ abstract class ProductRepository {
   Future<Either<Failure, ProductEntitiy>> getProductById(String id);
   Future<Either<Failure, ProductEntitiy>> createProduct(ProductEntitiy product);
   Future<Either<Failure, ProductEntitiy>> updateProduct(ProductEntitiy product);
-  Future<Either<Failure, void>> deleteProduct(String id);
+  Future<Either<Failure, Unit>> deleteProduct(String id);
 }
