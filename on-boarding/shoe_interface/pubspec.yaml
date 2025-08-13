@@ -41,6 +41,7 @@ dependencies:
   mockito: ^5.5.0
   internet_connection_checker: ^3.0.1
   shared_preferences: ^2.5.3
+  http: ^1.5.0
 
 dev_dependencies:
   flutter_test:
