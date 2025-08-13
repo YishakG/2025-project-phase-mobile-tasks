@@ -18,7 +18,7 @@ class ProductLocalDataSourceImpl extends ProductLocalDataSource{
   final SharedPreferences sharedPreferences;
   ProductLocalDataSourceImpl({required this.sharedPreferences});
 
-  getProductCacheKey(String id)=> '${productCacheKey}_$id';
+  String getProductCacheKey(String id)=> '${productCacheKey}_$id';
 
   @override
   Future<void> cacheProduct(ProductModel product) async{

@@ -36,7 +36,7 @@ void main() {
   });
 
   const tProductId = 'id';
-  final tProduct = ProductModel(
+  final tProduct = const ProductModel(
     id: tProductId,
     name: 'name',
     description: 'description',

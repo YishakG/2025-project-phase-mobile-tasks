@@ -1,16 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:shoe_interface/features/product/domain/usecases/delete_product_usecase.dart';
 
 import '../../../../helpers/test_helper.mocks.dart';
 
 void main() {
-  DeleteProductUsecase deleteProductUsecase;
   late MockProductRepository mockProductRepository;
   setUp(() {
     mockProductRepository = MockProductRepository();
-    deleteProductUsecase = DeleteProductUsecase(mockProductRepository);
   });
 
   final testId = '12345';
@@ -19,13 +16,12 @@ void main() {
     // arrange
     when(
       mockProductRepository.deleteProduct(testId),
-
-    ).thenAnswer((_) async => Right(unit));
+    ).thenAnswer((_) async => const Right(unit));
     // act
     final result = await mockProductRepository.deleteProduct(testId);
 
     // assert
-    expect(result, const Right(null));
+    expect(result, const Right(unit));
     verify(mockProductRepository.deleteProduct(testId)).called(1);
     verifyNoMoreInteractions(mockProductRepository);
   });
