@@ -20,7 +20,4 @@ class NetworkFailure extends Failure {
 }
 
 
-class NetworkFailure extends Failure {
-  const NetworkFailure([super.message = 'No internet connection']);
-}
 

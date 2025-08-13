@@ -1,0 +1,16 @@
+[
+  {
+    "id": "12345",
+    "name": "Nike SB Dunk Low Panda",
+    "description": "Classic Panda colorway, leather upper, waffle outsole",
+    "imageUrl": "https://.../images/12345.jpg",
+    "price": 100.0
+  },
+  {
+    "id": "6789",
+    "name": "Nike Air",
+    "description": "fancy shoes",
+    "imageUrl": "nike.com/2b",
+    "price": 130.0
+  }
+]
