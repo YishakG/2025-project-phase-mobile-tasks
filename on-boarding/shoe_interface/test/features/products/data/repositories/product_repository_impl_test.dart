@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shoe_interface/core/error/exceptions.dart';
 import 'package:shoe_interface/core/error/failures.dart';
-import 'package:shoe_interface/features/product/data/dataSources/product_remote_data_source.dart';
 import 'package:shoe_interface/features/product/data/models/product_model.dart';
 import 'package:shoe_interface/features/product/data/repositories/product_repository_impl.dart';
 
@@ -27,7 +26,7 @@ void main() {
   });
 
   const tProductId = 'id';
-  final tProduct = ProductModel(
+  final tProduct = const ProductModel(
     id: tProductId,
     name: 'test',
     description: 'test',

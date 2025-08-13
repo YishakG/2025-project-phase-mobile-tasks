@@ -1,12 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:http/http.dart' as client;
+import 'package:http/http.dart' as http;
 
 import '../../../../core/constants/constants.dart';
 import '../../../../core/error/exceptions.dart';
 import '../models/product_model.dart';
-import 'package:http/http.dart' as http;
 
 abstract class ProductRemoteDataSource {
   Future<ProductModel> createProduct(ProductModel product);

@@ -20,8 +20,8 @@ void main() {
     );
   });
 
-  const tProductId1 = "12345";
-  const tProdcutId2 = "6789";
+  const tProductId1 = '12345';
+  const tProdcutId2 = '6789';
 
   const tProduct1 = ProductModel(
     id: tProductId1,

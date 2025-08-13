@@ -6,7 +6,7 @@ import 'package:shoe_interface/features/product/data/models/product_model.dart';
 import '../../../../helpers/json_reader.dart';
 
 void main() {
-  var tProductModel = ProductModel(
+  var tProductModel = const ProductModel(
     id: '12345',
     name: 'Nike SB Dunk Low Panda',
     description: 'Classic Panda colorway, leather upper, waffle outsole',

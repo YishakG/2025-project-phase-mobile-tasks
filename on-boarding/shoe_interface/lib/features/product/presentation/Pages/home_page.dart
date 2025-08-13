@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../core/Components/product_card.dart';
+import '../widgets/product_card.dart';
 
 
 class Product {
@@ -25,25 +25,25 @@ class HomePage extends StatelessWidget {
 
   final List<Product> products = [
     Product(
-      title: "Derby Leather Shoes",
-      description: "A classic and versatile footwear option",
+      title: 'Derby Leather Shoes',
+      description: 'A classic and versatile footwear option',
       category: "Men's shoe",
       price: 120.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
     Product(
-      title: "Casual Sneakers",
-      description: "Comfortable sneakers for everyday wear",
+      title: 'Casual Sneakers',
+      description: 'Comfortable sneakers for everyday wear',
       category: "Men's Shoe",
       price: 80.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
     Product(
-      title: "Formal Oxfords",
-      description: "Elegant leather shoes for formal occasions",
+      title: 'Formal Oxfords',
+      description: 'Elegant leather shoes for formal occasions',
       category: "Men's shoe",
       price: 150.0,
-      image: "assets/images/shoe.jpg",
+      image: 'assets/images/shoe.jpg',
     ),
   ];
 

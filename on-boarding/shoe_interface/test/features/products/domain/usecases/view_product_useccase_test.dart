@@ -2,17 +2,14 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:shoe_interface/features/product/domain/entities/product_entitiy.dart';
-import 'package:shoe_interface/features/product/domain/usecases/view_product_usecase.dart';
 
 import '../../../../helpers/test_helper.mocks.dart';
 
 void main() {
-  ViewProductUsecase viewProductUsecase;
   late MockProductRepository mockProductRepository;
 
   setUp(() {
     mockProductRepository = MockProductRepository();
-    viewProductUsecase = ViewProductUsecase(mockProductRepository);
   });
 
   const testProductEntity = ProductEntitiy(

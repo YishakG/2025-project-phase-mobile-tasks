@@ -19,31 +19,24 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: '/home',
-      onGenerateRoute: (settings) {
-        Widget page;
-        switch (settings.name) {
-          case '/home':
-            page = HomePage();
-            break;
-          case '/add_product':
-            page = AddProductPage(product: settings.arguments as Product?);
-            break;
-          case '/details':
-            page = DetailsPage(product: settings.arguments as Product);
-            break;
-          case '/search':
-            page = const SearchProductPage();
-            break;
-          default:
-            page = HomePage();
-        }
-
-        // Use default MaterialPageRoute without custom transitions
-        return MaterialPageRoute(
-          settings: settings,
-          builder: (context) => page,
-        );
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/search': (context) => const SearchProductPage(),
+        '/add_product': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments;
+          if (args == null || args is Product?) {
+            return AddProductPage(product: args as Product?);
+          }
+          return HomePage(); // fallback
+        },
+        '/details': (context) {
+          final args = ModalRoute.of(context)?.settings.arguments;
+          if (args is Product) {
+            return DetailsPage(product: args);
+          }
+          return HomePage(); // fallback
+        },
       },
     );
   }
